@@ -9,12 +9,12 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class AnimalParametrizedTest {
-    private final String ANIMAL_KIND;
-    private final List<String> EXPECTED;
+    private final String animalKind;
+    private final List<String> expected;
 
     public AnimalParametrizedTest(String animalKind, List<String> expected) {
-        this.ANIMAL_KIND = animalKind;
-        this.EXPECTED = expected;
+        this.animalKind = animalKind;
+        this.expected = expected;
     }
 
     @Parameterized.Parameters(name ="Список еды.тестовые данные:{0},{1}")
@@ -27,7 +27,7 @@ public class AnimalParametrizedTest {
     @Test
     public void getFoodTest() throws Exception {
         Animal animal = new Animal();
-        List<String> stringList = animal.getFood(ANIMAL_KIND);
-        assertEquals(EXPECTED, stringList);
+        List<String> stringList = animal.getFood(animalKind);
+        assertEquals(expected, stringList);
     }
 }
